@@ -5,7 +5,6 @@ class HomeController
     {
 
         app.get("/", (req, res) => {
-
             res.render("Home/index", {
                 nome_jogador: ""
             })
