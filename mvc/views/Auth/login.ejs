@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TechSolutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        .login-card {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .input-field:focus-within {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 1px #6366f1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <!-- Logo/Cabeçalho -->
+        <div class="sm:mx-auto sm:w-full sm:max-w-md text-center">
+            <a href="/" class="text-3xl font-bold text-indigo-600 flex items-center justify-center">
+                <span class="material-icons text-4xl mr-2">smart_toy</span>
+                TechSolutions
+            </a>
+            <h2 class="mt-6 text-2xl font-extrabold text-gray-900">
+                Acesse sua conta
+            </h2>
+            <p class="mt-2 text-sm text-gray-600">
+                Ou <a href="/cadastro" class="font-medium text-indigo-600 hover:text-indigo-500">crie uma nova conta</a>
+            </p>
+        </div>
+
+        <!-- Card de Login -->
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="bg-white py-8 px-4 login-card sm:rounded-lg sm:px-10">
+                <form class="space-y-6" action="#" method="POST">
+                    <!-- Campo Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            Endereço de email
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm input-field border border-gray-300 transition-all duration-200">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <span class="material-icons text-gray-400">mail</span>
+                            </div>
+                            <input id="email" name="email" type="email" autocomplete="email" required 
+                                class="py-3 pl-10 block w-full border-0 focus:ring-0 sm:text-sm"
+                                placeholder="seu@email.com">
+                        </div>
+                    </div>
+
+                    <!-- Campo Senha -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Senha
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm input-field border border-gray-300 transition-all duration-200">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <span class="material-icons text-gray-400">lock</span>
+                            </div>
+                            <input id="password" name="password" type="password" autocomplete="current-password" required 
+                                class="py-3 pl-10 block w-full border-0 focus:ring-0 sm:text-sm"
+                                placeholder="••••••••">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" class="text-gray-400 hover:text-gray-500 focus:outline-none" id="togglePassword">
+                                    <span class="material-icons" id="passwordIcon">visibility_off</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lembrar e Esqueci a senha -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" 
+                                class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                                Lembrar-me
+                            </label>
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="/recuperar-senha" class="font-medium text-indigo-600 hover:text-indigo-500">
+                                Esqueceu sua senha?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Login -->
+                    <div>
+                        <button type="submit" 
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200">
+                            <span class="material-icons mr-2">login</span>
+                            Entrar
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Divisor -->
+                <div class="mt-6">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">
+                                Ou continue com
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Login Social -->
+                    <div class="mt-6 grid grid-cols-3 gap-3">
+                        <div>
+                            <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+                                <span class="sr-only">Entrar com Google</span>
+                                <span class="material-icons text-red-500">mail</span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+                                <span class="sr-only">Entrar com Facebook</span>
+                                <span class="material-icons text-blue-600">facebook</span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+                                <span class="sr-only">Entrar com GitHub</span>
+                                <span class="material-icons text-gray-800">code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div class="mt-8 text-center text-sm text-gray-600">
+            <p>
+                © 2023 TechSolutions. Todos os direitos reservados.
+                <a href="/privacidade" class="font-medium text-indigo-600 hover:text-indigo-500">Política de Privacidade</a> e 
+                <a href="/termos" class="font-medium text-indigo-600 hover:text-indigo-500">Termos de Uso</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Alternar visibilidade da senha
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = document.getElementById('passwordIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = 'visibility';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = 'visibility_off';
+            }
+        });
+
+        // Validação do formulário (simplificada)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                e.preventDefault();
+                alert('Por favor, preencha todos os campos.');
+            }
+            
+            // Aqui você poderia adicionar mais validações
+        });
+    </script>
+</body>
+</html>
